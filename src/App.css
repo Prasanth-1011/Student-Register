@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+    --color-dark: #01161e;
+    --color-dusk: #124559;
+    --color-mute: #598392;
+    --color-sage: #aec3b0;
+    --color-pale: #eff6e0;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Heebo", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header nav a {
+    @apply after:bg-sage relative inline-block py-2 after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full;
+}
+
+input {
+    @apply border-dark w-full rounded-md border-2 p-2;
+}
+
+button {
+    @apply bg-pale w-32 cursor-pointer rounded-md p-2 font-semibold;
+}
