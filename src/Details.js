@@ -12,19 +12,19 @@ export const studentRecord = {
 
 export const studentList = [
     {
-        name: "Nithin Kumar",
+        name: "Sam",
         roll: 1001,
         gender: "Male",
         course: "Information Technology",
         grade: "B",
-        favourite: true,
+        favourite: false,
         profile: picture,
     },
 
     {
-        name: "Suriya",
+        name: "Grace",
         roll: 1002,
-        gender: "Male",
+        gender: "Female",
         course: "Computer Science",
         grade: "A",
         favourite: false,
@@ -32,17 +32,17 @@ export const studentList = [
     },
 
     {
-        name: "Gowtham",
+        name: "Jane",
         roll: 1003,
-        gender: "Male",
+        gender: "Female",
         course: "Computer Science",
         grade: "B",
-        favourite: false,
+        favourite: true,
         profile: picture,
     },
 
     {
-        name: "Thangaraj",
+        name: "Jim",
         roll: 1004,
         gender: "Male",
         course: "Computer Science",

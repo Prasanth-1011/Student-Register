@@ -18,7 +18,7 @@ function Favourite() {
 
             <div className="animate-fade-in w-full max-w-5xl">
                 {favourites.length > 0 ? (
-                    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl">
+                    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-xl">
                         <table className="w-full border-collapse text-left text-gray-600">
                             <thead className="bg-violet-50 text-lg font-bold text-violet-700">
                                 <tr>
