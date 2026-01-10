@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { StudentContext } from "../StudentProvider";
 import { studentRecord } from "../Details";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,10 @@ function Form() {
         grade: "",
         favourite: false,
         profile: "",
+    });
+
+    useEffect(() => {
+        document.title = "Student Form";
     });
 
     const navigate = useNavigate();
@@ -58,136 +62,142 @@ function Form() {
     };
 
     return (
-        <section>
-            <form className="flex flex-col items-center justify-center gap-8 p-8">
-                <table className="w-[24rem] border-none p-2">
-                    <tbody>
-                        <tr>
-                            <th className="border-none px-2 py-2 text-left">
-                                Name
-                            </th>
-                            <td className="border-none px-2 py-2">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={newStudent.name}
-                                    placeholder="Enter Student Name"
-                                    onChange={handleChange}
-                                />
-                            </td>
-                        </tr>
+        <section className="flex h-[86vh] items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8">
+            <div className="animate-slide-up w-full max-w-lg lg:max-w-4xl">
+                <div className="rounded-2xl border border-gray-100 bg-white p-10 shadow-2xl">
+                    <h2 className="mb-8 text-center text-3xl font-extrabold tracking-tight text-gray-900">
+                        Add New Student
+                    </h2>
+                    <form className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={newStudent.name}
+                                placeholder="Enter Student Name"
+                                onChange={handleChange}
+                                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+                            />
+                        </div>
 
-                        <tr>
-                            <th className="border-none px-2 py-2 text-left">
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
                                 Age
-                            </th>
-                            <td className="border-none px-2 py-2">
-                                <input
-                                    type="number"
-                                    name="age"
-                                    value={newStudent.age}
-                                    placeholder="Enter Student Age"
-                                    onChange={handleChange}
-                                />
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th className="border-none px-2 py-4 text-left">
-                                Course
-                            </th>
-                            <td className="border-none px-2 py-4">
-                                <select
-                                    name="course"
-                                    value={newStudent.course}
-                                    onChange={handleChange}
-                                    className="border-dark w-full rounded-md border-2 py-2 pr-10 pl-1"
-                                >
-                                    <option value="Computer Science">
-                                        Computer Science
-                                    </option>
-                                    <option value="Information Technology">
-                                        Information Technology
-                                    </option>
-                                    <option value="Commerce">Commerce</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th className="border-none px-2 py-4 text-left">
+                            </label>
+                            <input
+                                type="text"
+                                name="age"
+                                value={newStudent.age}
+                                placeholder="Enter Student Age"
+                                onChange={handleChange}
+                                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
                                 Grade
-                            </th>
-                            <td className="border-none px-2 py-4">
-                                <select
-                                    name="grade"
-                                    value={newStudent.grade}
-                                    onChange={handleChange}
-                                    className="border-dark w-full rounded-md border-2 py-2 pr-10 pl-1"
-                                >
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </td>
-                        </tr>
+                            </label>
+                            <select
+                                name="grade"
+                                value={newStudent.grade}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border-gray-300 px-2 py-3 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+                            >
+                                <option value="" disabled>
+                                    Select Grade
+                                </option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
 
-                        <tr>
-                            <th className="border-none px-2 py-4 text-left">
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
+                                Course
+                            </label>
+                            <select
+                                name="course"
+                                value={newStudent.course}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border-gray-300 px-2 py-3 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+                            >
+                                <option value="" disabled>
+                                    Select Course
+                                </option>
+                                <option value="Computer Science">
+                                    Computer Science
+                                </option>
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+                                <option value="Commerce">Commerce</option>
+                            </select>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
                                 Gender
-                            </th>
-                            <td className="border-none px-2 py-4">
-                                <div className="flex items-center gap-2">
-                                    <span className="flex items-center gap-2">
-                                        <input
-                                            type="radio"
-                                            name="gender"
-                                            value="Male"
-                                            checked={
-                                                newStudent.gender === "Male"
-                                            }
-                                            onChange={handleChange}
-                                        />
-                                        <label htmlFor="">Male</label>
-                                    </span>
-                                    <span className="flex items-center gap-2">
-                                        <input
-                                            type="radio"
-                                            name="gender"
-                                            checked={
-                                                newStudent.gender === "Female"
-                                            }
-                                            onChange={handleChange}
-                                            value="Female"
-                                        />
-                                        <label htmlFor="">Female</label>
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
+                            </label>
+                            <div className="mt-2 flex items-center space-x-6 rounded-lg border border-gray-200 bg-gray-50 p-3">
+                                <span className="flex items-center">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        value="Male"
+                                        checked={newStudent.gender === "Male"}
+                                        onChange={handleChange}
+                                        className="h-4 w-4 border-gray-300 text-violet-600 focus:ring-violet-500"
+                                    />
+                                    <label className="ml-2 block text-sm font-medium text-gray-700">
+                                        Male
+                                    </label>
+                                </span>
+                                <span className="flex items-center">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        value="Female"
+                                        checked={newStudent.gender === "Female"}
+                                        onChange={handleChange}
+                                        className="h-4 w-4 border-gray-300 text-violet-600 focus:ring-violet-500"
+                                    />
+                                    <label className="ml-2 block text-sm font-medium text-gray-700">
+                                        Female
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
 
-                        <tr>
-                            <th className="border-none px-2 py-2 text-left">
-                                Profile
-                            </th>
-                            <td className="border-none px-2 py-2">
-                                <input
-                                    type="text"
-                                    name="profile"
-                                    value={newStudent.profile}
-                                    onChange={handleChange}
-                                    placeholder="Enter Image Link"
-                                />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button type="submit" onClick={handleSubmit}>
-                    Add Student
-                </button>
-            </form>
+                        <div className="space-y-2">
+                            <label className="ml-1 block text-sm font-medium text-gray-700">
+                                Profile Image
+                            </label>
+                            <input
+                                type="text"
+                                name="profile"
+                                value={newStudent.profile}
+                                onChange={handleChange}
+                                placeholder="Profile Image Link"
+                                className="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500"
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            onClick={handleSubmit}
+                            className="flex w-full transform justify-center rounded-lg border border-transparent bg-linear-to-r from-violet-600 to-indigo-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:from-violet-700 hover:to-indigo-700 focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:outline-none lg:col-span-2"
+                        >
+                            Add Student
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
     );
 }

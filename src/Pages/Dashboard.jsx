@@ -1,37 +1,41 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import Map from "../Components/Map";
 import { StudentContext } from "../StudentProvider";
 
 function Dashboard() {
     const { students, setStudents } = useContext(StudentContext);
 
-    return (
-        <section className="flex flex-col items-center justify-center gap-8 px-2 py-6">
-            <h1 className="text-center text-xl font-bold">Student List</h1>
+    useEffect(() => {
+        document.title = "Student List";
+    });
 
-            <div className="w-[90%] snap-x overflow-x-auto">
-                <table className="mx-auto border-collapse p-2">
-                    <thead>
-                        <tr>
-                            <th className="border-dark border-2 p-2 text-lg font-bold"></th>
-                            <th className="border-dark border-2 p-2 text-left text-lg font-bold">
-                                Name
-                            </th>
-                            <th className="border-dark border-2 p-2 text-lg font-bold">
-                                Roll
-                            </th>
-                            <th className="border-dark border-2 p-2 text-lg font-bold">
-                                Favourites
-                            </th>
-                            <th className="border-dark border-2 p-2 text-lg font-bold">
-                                Actions
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <Map list={students} />
-                    </tbody>
-                </table>
+    return (
+        <section className="flex h-[86vh] flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8">
+            <h1 className="mt-4 text-center text-2xl font-bold tracking-wide text-gray-800">
+                Student List
+            </h1>
+
+            <div className="animate-fade-in w-full max-w-5xl">
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl">
+                    <table className="w-full border-collapse text-left text-gray-600">
+                        <thead className="bg-violet-50 text-lg font-bold text-violet-700">
+                            <tr>
+                                <th className="px-6 py-4"></th>
+                                <th className="px-6 py-4">Name</th>
+                                <th className="px-6 py-4 text-center">Roll</th>
+                                <th className="px-6 py-4 text-center">
+                                    Favourites
+                                </th>
+                                <th className="px-6 py-4 text-center">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                            <Map list={students} />
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     );
