@@ -7,7 +7,7 @@ function Header() {
                 <h1 className="text-3xl font-extrabold tracking-tight">
                     Favourite Student App
                 </h1>
-                <nav className="flex justify-center gap-8 text-lg font-medium text-violet-100">
+                <nav className="flex justify-center gap-8 text-lg font-medium text-nowrap text-violet-100">
                     <NavLink
                         to="/"
                         className="transition-colors hover:text-white"
