@@ -5,18 +5,18 @@ import Map from "../Components/Map";
 function Favourite() {
   const { students, setProfile } = useContext(StudentContext);
   const favourites = students.filter((student) => student.favourite);
-  const ref = useRef("favourite");
+  const favRef = useRef(null);
 
   useEffect(() => {
     document.title = "Favourite Students";
-    if (ref.current) {
-      ref.current.scrollIntoView({ behaviour: "smooth" });
+    if (favRef.current) {
+      favRef.current.scrollIntoView({ behaviour: "smooth", block: "start" });
     }
   }, []);
 
   return (
     <section className="flex h-[86vh] flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8"
-      ref={favourite}
+      ref={favRef}
     >
       <h1 className="mt-4 text-center text-2xl font-bold tracking-wide text-gray-800">
         Favourite Students
