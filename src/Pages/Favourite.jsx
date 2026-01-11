@@ -15,7 +15,8 @@ function Favourite() {
   }, []);
 
   return (
-    <section className="flex h-[86vh] flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8"
+    <section
+      className="flex h-[86vh] scroll-mt-32 flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8"
       ref={favRef}
     >
       <h1 className="mt-4 text-center text-2xl font-bold tracking-wide text-gray-800">

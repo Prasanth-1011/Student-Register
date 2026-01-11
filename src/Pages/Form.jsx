@@ -72,7 +72,8 @@ function Form() {
   };
 
   return (
-    <section className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8"
+    <section
+      className="flex scroll-mt-32 items-center justify-center px-4 py-12 sm:px-6 lg:px-8"
       ref={formRef}
     >
       <div className="animate-slide-up w-full max-w-lg lg:max-w-4xl">
