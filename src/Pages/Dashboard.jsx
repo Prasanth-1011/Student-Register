@@ -4,11 +4,12 @@ import Profile from "../Components/Profile";
 import { StudentContext } from "../StudentProvider";
 
 function Dashboard() {
-  const { students, profile } = useContext(StudentContext);
+  const { students, profile, setProfile } = useContext(StudentContext);
 
   useEffect(() => {
     document.title = "Dashboard";
-  });
+    setProfile(null);
+  }, []);
 
   return (
     <section className="flex flex-col items-center justify-start gap-12 bg-gray-50 px-4 py-8">
