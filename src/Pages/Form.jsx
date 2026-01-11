@@ -4,7 +4,7 @@ import { studentRecord } from "../Details";
 import { useNavigate } from "react-router-dom";
 
 function Form() {
-  const { students, setStudents } = useContext(StudentContext);
+  const { students, setStudents, setProfile } = useContext(StudentContext);
   const [newStudent, setNewStudent] = useState({
     name: "",
     age: "",
@@ -17,7 +17,8 @@ function Form() {
 
   useEffect(() => {
     document.title = "Student Form";
-  });
+    setProfile(null);
+  }, []);
 
   const navigate = useNavigate();
 
