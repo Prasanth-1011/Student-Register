@@ -3,12 +3,13 @@ import { StudentContext } from "../StudentProvider";
 import Map from "../Components/Map";
 
 function Favourite() {
-  const { students } = useContext(StudentContext);
+  const { students, setProfile } = useContext(StudentContext);
   const favourites = students.filter((student) => student.favourite);
 
   useEffect(() => {
     document.title = "Favourite Students";
-  });
+    setProfile(null);
+  }, []);
 
   return (
     <section className="flex h-[86vh] flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8">
