@@ -7,7 +7,7 @@ function Dashboard() {
   const { students, profile } = useContext(StudentContext);
 
   useEffect(() => {
-    document.title = "Student List";
+    document.title = "Dashboard";
   });
 
   return (

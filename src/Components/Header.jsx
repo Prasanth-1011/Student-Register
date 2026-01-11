@@ -8,7 +8,7 @@ function Header() {
       </h1>
       <nav className="flex justify-center gap-8 text-lg font-medium text-nowrap text-violet-100">
         <NavLink to="/" className="transition-colors hover:text-white">
-          Home
+          Dashboard
         </NavLink>
         <NavLink to="forms" className="transition-colors hover:text-white">
           Add Student

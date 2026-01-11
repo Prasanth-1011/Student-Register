@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     <div
-      className="animate-slide-up mx-auto w-full max-w-5xl scroll-mt-32 rounded-2xl border border-gray-100 bg-white p-10 shadow-md"
+      className="animate-slide-up mx-auto w-full max-w-5xl scroll-mt-32 rounded-2xl border border-gray-100 bg-white p-10 shadow-md lg:py-18"
       ref={ref}
     >
       <div className="flex flex-col items-center gap-10 md:flex-row">

@@ -36,10 +36,8 @@ function Favourite() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center rounded-xl border border-gray-100 bg-white p-12 text-center shadow-lg">
-            <p className="mb-4 text-xl text-gray-400">
-              No favourite students added yet.
-            </p>
-            <p className="text-violet-500">Add some from the dashboard!</p>
+            <p className="mb-4 text-xl text-gray-400">No Students Added Yet.</p>
+            <p className="text-violet-500">Add Students From The Dashboard!</p>
           </div>
         )}
       </div>
