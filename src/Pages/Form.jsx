@@ -1,10 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { StudentContext } from "../StudentProvider";
 import { studentRecord } from "../Details";
 import { useNavigate } from "react-router-dom";
 
 function Form() {
   const { students, setStudents, setProfile } = useContext(StudentContext);
+  const ref = useRef("form");
   const [newStudent, setNewStudent] = useState({
     name: "",
     age: "",
@@ -17,7 +18,9 @@ function Form() {
 
   useEffect(() => {
     document.title = "Student Form";
-    setProfile(null);
+    if (ref.current) {
+      ref.current.scrollIntoView({ behaviour: "smooth" });
+    }
   }, []);
 
   const navigate = useNavigate();
@@ -69,7 +72,9 @@ function Form() {
   };
 
   return (
-    <section className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+    <section className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8"
+      ref={form}
+    >
       <div className="animate-slide-up w-full max-w-lg lg:max-w-4xl">
         <div className="rounded-2xl border border-gray-100 bg-white p-10 shadow-2xl">
           <h2 className="mb-8 text-center text-3xl font-extrabold tracking-tight text-gray-900">
