@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Form() {
   const { students, setStudents, setProfile } = useContext(StudentContext);
-  const ref = useRef("form");
+  const formRef = useRef(null);
   const [newStudent, setNewStudent] = useState({
     name: "",
     age: "",
@@ -18,8 +18,8 @@ function Form() {
 
   useEffect(() => {
     document.title = "Student Form";
-    if (ref.current) {
-      ref.current.scrollIntoView({ behaviour: "smooth" });
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behaviour: "smooth", block: "start" });
     }
   }, []);
 
@@ -73,7 +73,7 @@ function Form() {
 
   return (
     <section className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8"
-      ref={form}
+      ref={formRef}
     >
       <div className="animate-slide-up w-full max-w-lg lg:max-w-4xl">
         <div className="rounded-2xl border border-gray-100 bg-white p-10 shadow-2xl">
