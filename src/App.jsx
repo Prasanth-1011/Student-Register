@@ -7,32 +7,32 @@ import StudentProvider from "./StudentProvider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children: [
-            {
-                index: true,
-                element: <Dashboard />,
-            },
-            {
-                path: "forms",
-                element: <Form />,
-            },
-            {
-                path: "favourites",
-                element: <Favourite />,
-            },
-        ],
-    },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "forms",
+        element: <Form />,
+      },
+      {
+        path: "favourites",
+        element: <Favourite />,
+      },
+    ],
+  },
 ]);
 
 const App = () => {
-    return (
-        <StudentProvider>
-            <RouterProvider router={router} />
-        </StudentProvider>
-    );
+  return (
+    <StudentProvider>
+      <RouterProvider router={router} />
+    </StudentProvider>
+  );
 };
 
 export default App;
