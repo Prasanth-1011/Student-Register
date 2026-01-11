@@ -27,7 +27,7 @@ function Dashboard() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            <Map list={students} />
+            <Map list={students} details={true} />
           </tbody>
         </table>
       </div>

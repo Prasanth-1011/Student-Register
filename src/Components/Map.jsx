@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StudentContext } from "../StudentProvider";
 
-function Map({ list }) {
+function Map(props) {
   const { students, setStudents, setProfile, ref } = useContext(StudentContext);
 
   const toggleFavourite = (student) => {
@@ -26,7 +26,7 @@ function Map({ list }) {
 
   return (
     <>
-      {list.map((student, index) => (
+      {props.list.map((student, index) => (
         <tr
           key={index}
           className="group transition-colors duration-200 hover:bg-violet-50/50"
@@ -56,7 +56,7 @@ function Map({ list }) {
               <button
                 type="button"
                 onClick={() => sendDetails(student)}
-                className="w-auto rounded border border-gray-300 bg-white px-6 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                className={`${props.details ? "" : "hidden"} w-auto rounded border border-gray-300 bg-white px-6 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900`}
               >
                 Details
               </button>

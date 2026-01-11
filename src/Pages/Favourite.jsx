@@ -30,7 +30,7 @@ function Favourite() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                <Map list={favourites} />
+                <Map list={favourites} details={false} />
               </tbody>
             </table>
           </div>
