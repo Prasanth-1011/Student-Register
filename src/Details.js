@@ -1,4 +1,6 @@
 import picture from "./Assets/Profile Avatar.png";
+import male_avatar from "./Assets/Man Avatar.png";
+import female_avatar from "./Assets/Woman Avatar.png";
 
 export const studentRecord = {
   name: "John Doe",
@@ -19,7 +21,7 @@ export const studentList = [
     course: "Information Technology",
     grade: "B",
     favourite: false,
-    profile: picture,
+    profile: male_avatar,
   },
 
   {
@@ -30,7 +32,7 @@ export const studentList = [
     course: "Computer Science",
     grade: "A",
     favourite: false,
-    profile: picture,
+    profile: female_avatar,
   },
 
   {
@@ -41,7 +43,7 @@ export const studentList = [
     course: "Computer Science",
     grade: "B",
     favourite: true,
-    profile: picture,
+    profile: female_avatar,
   },
 
   {
@@ -52,6 +54,6 @@ export const studentList = [
     course: "Computer Science",
     grade: "A",
     favourite: true,
-    profile: picture,
+    profile: male_avatar,
   },
 ];
