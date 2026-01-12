@@ -9,6 +9,10 @@ function Dashboard() {
   useEffect(() => {
     document.title = "Dashboard";
     setProfile(null);
+
+    return () => {
+      window.scrollTo(0, 0);
+    };
   }, []);
 
   return (

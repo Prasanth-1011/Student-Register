@@ -1,24 +1,17 @@
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { StudentContext } from "../StudentProvider";
 import Map from "../Components/Map";
 
 function Favourite() {
   const { students, setProfile } = useContext(StudentContext);
   const favourites = students.filter((student) => student.favourite);
-  const favRef = useRef(null);
 
   useEffect(() => {
     document.title = "Favourite Students";
-    if (favRef.current) {
-      favRef.current.scrollIntoView({ behaviour: "smooth", block: "start" });
-    }
   }, []);
 
   return (
-    <section
-      className="flex h-[86vh] scroll-mt-32 flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8"
-      ref={favRef}
-    >
+    <section className="flex h-[86vh] scroll-mt-32 flex-col items-center justify-start gap-8 overflow-y-auto bg-gray-50 px-4 py-8">
       <h1 className="mt-4 text-center text-2xl font-bold tracking-wide text-gray-800">
         Favourite Students
       </h1>
